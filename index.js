@@ -3,6 +3,7 @@
 for(let i=0;i<document.querySelectorAll(".drum").length;i++){
   document.querySelectorAll(".drum")[i].addEventListener("click",function (){
 
+
     console.log(this.innerText);
     let letter = this.innerText;
     switch(letter){
@@ -42,15 +43,24 @@ for(let i=0;i<document.querySelectorAll(".drum").length;i++){
         audio7.play();
         break;
 
-      default:
+      default: console.log("buttonInnerHTML");
 
     }
 
   });
 }
- function keyStroke(char){
 
- }
+document.addEventListener("keydown", function(event){
+
+  console.log(event);
+  console.log(check(event));
+  alert("Key was pressed");
+
+});
+
+function check(event){
+  return event.key;
+}
 
 // document.addEventListener("keydown", function(event){
 //   alert("key was pressed");
